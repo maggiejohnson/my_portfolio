@@ -4,22 +4,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Maggie Johnson's Portfolio">
+    <meta name="author" content="Maggie Johnson">
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>STANLEY - Free Bootstrap Theme </title>
+    <title>Maggie Johnson's Portfolio</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-
+    <link href="/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="assets/js/hover.zoom.js"></script>
-    <script src="assets/js/hover.zoom.conf.js"></script>
+    <script src="/js/hover.zoom.js"></script>
+    <script src="/js/hover.zoom.conf.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -39,67 +38,22 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">MAGGIE JOHNSON</a>
+          <a class="navbar-brand" href="/">MAGGIE JOHNSON</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="<%= @works %>">WORKS</a></li>
-            <li><a href="<%= @tweets %>">TWEETS</a></li>
-            <li><a href="<%= @instagram %>">INSTAGRAM</a></li>
+            <li class="<%= @home %>"><a href="/">HOME</a></li>
+            <li class="<%= @about %>"><a href="/about">ABOUT</a></li>
+            <li class="<%= @works %>"><a href="/works">WORKS</a></li>
+            <li class="<%= @tweets %>"><a href="/tweets">TWEETS</a></li>
+            <li class="<%= @insta %>"><a href="/insta">INSTAGRAM</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
+      
+    <%= yield %>
 
-	<!-- +++++ Welcome Section +++++ -->
-	<div id="ww">
-	    <div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 centered">
-					<img src="assets/img/user.png" alt="Stanley">
-					<h1>Hi, I'm Maggie!</h1>
-					<p>Hi everyone. My name is Maggie Johnson and I am a Media Studies student at Mercer University's Center for Collaborative Journalism.</p>
-				
-				</div><!-- /col-lg-8 -->
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /ww -->
-	
-	
-      <!-- +++++ Projects Section +++++ -->
-	
-<!--	<div class="container pt">
-		<div class="row mt centered">	
-			<div class="col-lg-4">
-				<a class="zoom green" href="work01.html"><img class="img-responsive" src="assets/img/portfolio/port01.jpg" alt="" /></a>
-				<p>APE</p>
-			</div>
-			<div class="col-lg-4">
-				<a class="zoom green" href="work01.html"><img class="img-responsive" src="assets/img/portfolio/port02.jpg" alt="" /></a>
-				<p>RAIDERS</p>
-			</div>
-			<div class="col-lg-4">
-				<a class="zoom green" href="work01.html"><img class="img-responsive" src="assets/img/portfolio/port03.jpg" alt="" /></a>
-				<p>VIKINGS</p>
-			</div>
-		</div><!-- /row -->
-<!--		<div class="row mt centered">	
-			<div class="col-lg-4">
-				<a class="zoom green" href="work01.html"><img class="img-responsive" src="assets/img/portfolio/port04.jpg" alt="" /></a>
-				<p>YODA</p>
-			</div>
-			<div class="col-lg-4">
-				<a class="zoom green" href="work01.html"><img class="img-responsive" src="assets/img/portfolio/port05.jpg" alt="" /></a>
-				<p>EMPERORS</p>
-			</div>
-			<div class="col-lg-4">
-				<a class="zoom green" href="work01.html"><img class="img-responsive" src="assets/img/portfolio/port06.jpg" alt="" /></a>
-				<p>CHIEFS</p> 
-			</div>
-		</div><!-- /row -->
-<!--	</div><!-- /container --> 
-	
 	
 	<!-- +++++ Footer Section +++++ -->
 	
@@ -109,25 +63,20 @@
 				<div class="col-lg-4">
 					<h4>Home Life</h4>
 					<p>
-						1207 4th Avenue<br/>
-						Eastman, GA
+                        1400 Coleman Avenue<br/>
+                        Macon, GA 31207<hr>
+                        478-231-1670<br/>
+                        magsleyj@gmail.com
 					</p>
 				</div><!-- /col-lg-4 -->
 				
 				<div class="col-lg-4">
 					<h4>My Links</h4>
-					<p>
-						<a href="#">Dribbble</a><br/>
-						<a href="#">Twitter</a><br/>
-						<a href="#">Facebook</a>
+					<p> <a href="https://twitter.com/mags_johnson">Twitter</a><br/>
+				        <a href="https://facebook.com/maggiej00">Facebook</a><br/>
+                        <a href="https://www.linkedin.com/profile/view?id=226431830&trk=nav_responsive_tab_profile_pic">LinkedIn</a>
 					</p>
-				</div><!-- /col-lg-4 -->
-				
-				<div class="col-lg-4">
-					<h4>About Stanley</h4>
-					<p>This cute theme was created to showcase your work in a simple way. Use it wisely.</p>
-				</div><!-- /col-lg-4 -->
-			
+				</div><!-- /col-lg-4 -->			
 			</div>
 		
 		</div>
@@ -137,6 +86,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
   </body>
 </html>

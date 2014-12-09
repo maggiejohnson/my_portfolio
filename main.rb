@@ -4,8 +4,8 @@ require "sinatra/reloader" if development?
 get '/' do
     @title = "Maggie Johnson's Portfolio"
     @description = "This site showcases all of the awesome things that Maggie Johnson has done."
-    @index = "active"
-    erb :index
+    @layout = "active"
+    erb :home
 end
 
 get '/about' do
@@ -31,33 +31,38 @@ get '/tweets' do
         config.access_token_secret = "xIhyFVEZXqQqxEkOZSiWvY9undTULRLeNQRA0Z9e5q8wt"
     end
     
-        @search_results = client.search("mags_johnson", result_type: "mixed").take(30).collect do |tweet|
+        @search_results = client.search("allmanbrothersband", result_type: "mixed").take(30).collect do |tweet|
       "#{tweet.user.screen_name}: #{tweet.text}"
             tweet
         end
     
-    @title = "My ____ Tweets"
-    @description = "This page contains my tweets that ____."
+    @title = "Tweets"
+    @description = "This page contains my tweets that have the hashtag #allmanbrothersband."
     @tweets = "active"
     erb :tweets
  end
 
 
-#instagram
-get '/news' do
-    require 'google-search'
-    query = "Mercer football"
-    #@results = "test"
-    @results = Array.new
-    Google::Search::News.new do |search|
-        search.query = query
-        search.size = :large
-    end.each { |item| @results.push item }
-    
-    @title = "News about ___"
-    @description = "These are news stories about ___"
-    @news = "active"
-    erb :news
+get '/insta' do
+    require 'instagram'
+    @title = "My Instagram"
+    @description = "My Instagram photos"
+    @insta = "active"
+
+
+    Instagram.configure do |config|
+      config.client_id = "d832519fa80f4d13ad2e73ccd3a6fbd8"
+      config.client_secret = "1bf09a1c6bbd4b4985b3b59f516aa7e1"
+    end
+
+
+    client = Instagram.client(:access_token => session[:access_token])
+    @photos = Array.new
+    for photo in client.user_recent_media(26873334)
+        @photos.push photo
+    end
+    erb :insta
+
 end
 
 

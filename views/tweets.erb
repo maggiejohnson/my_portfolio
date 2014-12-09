@@ -2,8 +2,10 @@
 		<div class="row centered mt mb">
 			<div class="col-lg-8 col-lg-offset-2">
                     <h1><%= @title %></h1>
+                    <img src="/img/allman-brothers.png" alt="ABB">
+                    <h4>My favorite band is The Allman Brothers Band. Formed by Gregg and Duane Allman, the band is known as one of the most influential bands in the creation of southern rock. Their history with Macon is incredible and their music will live on forever.</h4>
                 <% @search_results.each do |tweet| %>
-                    <p><%= tweet.retweet_count %>: <a href=""><%= tweet.user.screen_name %></a><%= tweet.text %></p>
+                    <p><%= tweet.retweet_count %>: <a href="#allmanbrothers"><%= tweet.user.screen_name %></a><%= tweet.text %></p>
     
                 <% end %>
             </div>
